@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Здесь Вы можете посмотреть моё портфолио">
+    <title>KruViola</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.scss">
+    <link rel="shortcut icon" href="img/kru.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous"><!--svg--></ul>
+    <!--для слайда-->
+
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+     <script src="garand-sticky-73b0fbe/jquery.sticky.js"></script>
+    <!---->
+    <script src="script.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+        $('.bxslider').bxSlider({
+          slideWidth :  7000;
+        });
+        });
+    </script>
+    <script>
+  $(document).ready(function(){
+    $(".header_nav").sticky({topSpacing:0, zIndex: 90000});
+  });
+</script>
+</head>
+<body>
+
+
+
+
+
+    <header class="header">
+        <div class="header_hero-img">
+          <div class="menu">
+          <div class="menu__icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu__links">
+              <a class="menu__links-item" href="index.html"  title="главное">Главное</a>
+              <a class="menu__links-item" href="index3.html"  title="портфолио">Портфолио</a>
+              <a class="menu__links-item" href="index2.html"  title="сертификат">Сертификаты</a>
+              <a class="menu__links-item" href="index4.html"  title="контакт">Контакты</a>
+              <a class="menu__links-item" href="index5.html"  title="блог">Блог</a>
+          </div>
+        </div>
+        <script>
+        (function($){
+          $(function() {
+            $('.menu__icon').on('click', function() {
+              $(this).closest('.menu').toggleClass('menu_state_open');
+            });
+          });
+        })(jQuery);
+
+        </script>
+            <div class="header_hero-text">
+                <h1 class="header_title">
+                    Крупенькова Виолетта
+                </h1>
+                <p class="header_text">
+                    Html-верстальщик/Front-end developer
+                </p>
+            </div>
+
+            <div class="header_nav">
+              <ul>
+                <li><a href="index.html"  title="главное">Главное</a></li>
+                <li><a href="index3.html" title="портфолио">Портфолио</a></li>
+                <li><a href="index2.html" title="сертификат">Сертификаты</a></li>
+                <li><a href="index4.html" title="контакты">Контакты</a></li>
+                <li><a href="index5.html" title="блог">Блог</a>
+                </li>
+              </ul>
+            </div>
+            <div class="loader">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <section class="portfolio">
+            <div class="portfolio-wrapper">
+                <h2 class="portfolio_title">Портфолио</h2>
+            </div>
+            <div class="portfolio_projects">
+                <div class="portfolio_projects-filter">
+                    <div class="portfolio_project">
+                        <div class="portfolio_pic">
+                            <img src="img/pinc.png" alt="Макет_1" title="макет">
+                            <div class="portfolio_overlay">
+                                <div class="portfolio_overlay-content">
+                                    <h2 class="portfolio_overlay-title">Макет_1</h2>
+                                    <a href="#" title="пусто"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project">
+                        <div class="portfolio_pic">
+                            <img src="img/aaa.png" alt="Макет_2" title="макет">
+                            <div class="portfolio_overlay">
+                                <div class="portfolio_overlay-content">
+                                    <h2 class="portfolio_overlay-title">Макет_3</h2>
+                                    <a href="#" target="_blank" title="Переход"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio_project">
+                        <div class="portfolio_pic">
+                            <img src="img/port.png" alt="Макет_3">
+                            <div class="portfolio_overlay">
+                                <div class="portfolio_overlay-content">
+                                    <h2 class="portfolio_overlay-title">Макет_3</h2>
+                                    <p class="portfolio_overlay-text">Адаптивная верстка</p>
+                                    <a href="#" target="_blank" title="Переход"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--слайдер-->
+        <section class="certificates">
+            <h1 class="certificates_title">Сертификаты</h1>
+            <div class="bxslider">
+                <div><img src="img/sleader.png" alt="img" title="GeekBrains"></div>
+                <div><img src="img/sleader1.png" alt="img" title="GeekBrains and Sololearn"></div>
+            </div>
+
+
+
+
+        </section>
+    </main>
+    <footer>
+        <section class="contacts">
+            <ul class="contacts_items">
+                <li class="contacts_item">
+                    <i class="fab fa-skype fa-2x"></i>
+                    <a href="callto:kruviola" title="kru" class="contacts_item-link icon-skype">
+                        kruviola
+                    </a>
+                </li>
+                <li class="contacts_item">
+                    <i class="fas fa-at fa-2x"></i>
+                    <a href="mailto:violochka1994@mail.ru"  title="title" class="contacts_item-link icon-mail">
+                        violochka1994@mail.ru
+                    </a>
+                </li>
+                <li class="contacts_item">
+                    <i class="fas fa-phone fa-2x"></i>
+                    <a href="telto:+375291382915" title="title" class="contacts_item-link icon-phone">
+                        +375(29)1382915
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </footer>
+
+
+    	<script type="text/javascript">
+    		$(document).ready(function() {
+    			/*
+    			var defaults = {
+    	  			containerID: 'toTop', // fading element id
+    				containerHoverID: 'toTopHover', // fading element hover id
+    				scrollSpeed: 1200,
+    				easingType: 'linear'
+    	 		};
+    			*/
+
+    			$().UItoTop({ easingType: 'easeOutQuart' });
+
+    		});
+    	</script>
+
+</body>
+</html>

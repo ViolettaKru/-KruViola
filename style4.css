@@ -1,0 +1,342 @@
+body, html {
+    height: 100%;
+    margin:  0px;
+}
+
+
+
+
+.header_nav {
+  width: 97.3%;
+  height: 25px;
+  margin: 0 0 0 0px;
+  padding: 20px;
+  list-style: none;
+  background-color: #010509;
+}
+
+.header_nav li{
+  display: inline;
+  margin-right: 35px;
+}
+
+
+.header_nav ul{
+  margin-left: 170px;
+}
+.header_nav a{
+
+  padding: 60px;
+  font-size: 17px;
+  color: white;
+}
+
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+}
+
+li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+  margin-right: 15px; /*Добавляем отступ у пунктов меню*/
+  position:relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;/*добавляем эффект при наведении*/
+}
+
+li>ul {
+  position:absolute;
+  top:25px;
+  display:none;
+}
+
+li:hover>ul>li{
+    float:none; /*Убираем горизонтальное позиционирование*/
+}
+
+
+li:hover>ul {
+  display:block;
+  width:250px;  /*Задаем ширину выпадающего меню*/
+}
+
+
+
+
+
+
+
+
+
+
+.parallax {
+    background-image: url("img/parallax3.png");
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+.parallax_1 {
+    background-image: url("img/parallax1.png");
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.parallax_2 {
+    background-image: url("img/parallax2.png");
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+.blok1{
+  float: left;
+  margin: 250px 0 0 100px;
+  background-color: #71c2ee;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  border-color: #010304;
+  border-width: 13px;
+  border-style: double;
+}
+.blok2{
+  float: left;
+  margin: 250px 0 0 180px;
+  background-color: #71c2ee;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  border-color: #010304;
+  border-width: 13px;
+  border-style: double;
+}
+.blok3{
+  float: right;
+  margin: 250px 100px 0 0;
+  background-color: #71c2ee;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  border-color: #010304;
+  border-width: 13px;
+  border-style: double;
+}
+
+h1{
+  margin: 0px ;
+}
+
+.h1{
+  padding-top: 100px;
+  padding-left: 500px;
+  font-size: 24px;
+}
+
+h3{
+  margin-left: 50px;
+}
+
+
+p{
+  margin-left: 30px;
+}
+
+@media only screen and (max-width : 999px) {
+  .header_nav{
+    display: none;
+  }
+
+  .caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 0px 0 10px 0px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+
+
+}
+}
+
+
+
+
+.menu {
+    text-align: left;
+}
+
+.menu__icon {
+   display: none;
+   width: 45px;
+   height: 35px;
+   position: relative;
+   cursor: pointer;
+}
+
+.menu__icon span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: #333333;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.menu__icon span:nth-child(1) {
+  top: 0px;
+}
+
+.menu__icon span:nth-child(2), .menu__icon span:nth-child(3) {
+  top: 13px;
+}
+
+.menu__icon span:nth-child(4) {
+  top: 26px;
+ }
+
+.menu__links{
+  display: none;
+}
+
+.menu__links-item {
+    display: inline-block;
+    color: #333333;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu__links-item:hover {
+    text-decoration: underline;
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.menu.menu_state_open  .menu__icon span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menu.menu_state_open  .menu__icon span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.menu.menu_state_open .menu__links {
+  display: block;
+}
+
+
+
+.contacts {
+    width: 100%;
+    background: #eaeaea;
+}
+
+.contacts_items {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    padding: 25px 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacts_item {
+    position: relative;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.contacts_item-link {
+    font-size: 20px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.contacts_item-link::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 18px;
+    height: 24px;
+}
+
+
+
+.main-footer {
+    margin-top: 60px;
+}
+
+.fab {
+    color:#00b0ed;
+}
+
+.fa-at{
+    color: #fe9e00;
+}
+
+.fa-phone{
+    color: #5270ff;
+}

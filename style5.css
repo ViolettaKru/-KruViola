@@ -1,0 +1,609 @@
+
+*{transition:.3s linear;}
+body {
+  margin: 0;
+  background: #F0F0F0;
+  font-family: cambria;
+  color: #240152;
+  min-height: 100vh;
+}
+
+
+
+
+
+
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+}
+
+li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+  margin-right: 15px; /*Добавляем отступ у пунктов меню*/
+  position:relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;/*добавляем эффект при наведении*/
+}
+
+li>ul {
+  position:absolute;
+  top:25px;
+  display:none;
+}
+
+li:hover>ul>li{
+    float:none; /*Убираем горизонтальное позиционирование*/
+}
+
+
+li:hover>ul {
+  display:block;
+  width:250px;  /*Задаем ширину выпадающего меню*/
+}
+
+.main-footer {
+    margin-top: 60px;
+}
+
+.fab {
+    color:#00b0ed;
+}
+
+.fa-at{
+    color: #fe9e00;
+}
+
+.fa-phone{
+    color: #5270ff;
+}
+
+
+
+
+.header_nav li{
+  display: inline;
+  margin-right: 35px;
+}
+
+
+.header_nav ul{
+  margin-left: 170px;
+}
+.header_nav a{
+
+  padding: 60px;
+  font-size: 17px;
+  color: #4a4949;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;/*добавляем эффект при наведении*/
+}
+
+li>ul {
+  position:absolute;
+  top:25px;
+  display:none;
+}
+
+li:hover>ul>li{
+    float:none; /*Убираем горизонтальное позиционирование*/
+}
+
+
+li:hover>ul {
+  display:block;
+  width:250px;  /*Задаем ширину выпадающего меню*/
+}
+
+
+
+
+
+.container {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.header_nav {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+main{
+  margin-left: 150px;
+}
+
+
+
+/* Базовые стили слоя затемнения и модального окна  */
+.overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+/* фон затемнения */
+    background-color: rgba(0, 0, 0, 0.65);
+    position: fixed; /* фиксированное поцизионирование */
+    cursor: default; /* тип курсара */
+}
+/* активируем слой затемнения */
+.overlay:target {
+    display: block;
+}
+/* стили модального окна */
+.popup {
+    top: -100%;
+    right: 0;
+    left: 50%;
+    font-size: 14px;
+    z-index: 20;
+    margin: 0;
+    width: 85%;
+    min-width: 320px;
+    max-width: 600px;
+/* фиксированное позиционирование, окно стабильно при прокрутке */
+    position: fixed;
+    padding: 15px;
+    border: 1px solid #383838;
+    background: #fefefe;
+/* скругление углов */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    font: 14px/18px 'Tahoma', Arial, sans-serif;
+/* внешняя тень */
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -ms-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-transform: translate(-50%, -500%);
+    -ms-transform: translate(-50%, -500%);
+    -o-transform: translate(-50%, -500%);
+    transform: translate(-50%, -500%);
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    -moz-transition: -moz-transform 0.6s ease-out;
+    -o-transition: -o-transform 0.6s ease-out;
+    transition: transform 0.6s ease-out;
+}
+/* активируем модальный блок */
+.overlay:target+.popup {
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    top: 20%;
+}
+/* формируем кнопку закрытия */
+.close {
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    padding: 0;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    background-color: rgba(61, 61, 61, 0.8);
+    -webkit-box-shadow: 0px 0px 10px #000;
+    -moz-box-shadow: 0px 0px 10px #000;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    text-decoration: none;
+    font: 13px/20px 'Tahoma', Arial, sans-serif;
+    font-weight: bold;
+    -webkit-transition: all ease .8s;
+    -moz-transition: all ease .8s;
+    -ms-transition: all ease .8s;
+    -o-transition: all ease .8s;
+    transition: all ease .8s;
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+    font-size: 12px;
+}
+.close:hover {
+    background-color: rgba(252, 20, 0, 0.8);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+/* изображения внутри окна */
+.popup img {
+    width: 100%;
+    height: auto;
+}
+/* миниатюры слева/справа */
+.pic-left,
+.pic-right {
+    width: 25%;
+    height: auto;
+}
+.pic-left {
+    float: left;
+    margin: 5px 15px 5px 0;
+}
+.pic-right {
+    float: right;
+    margin: 5px 0 5px 15px;
+}
+/* элементы м-медиа, фреймы */
+.popup embed,
+.popup iframe {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display:block;
+    margin: auto;
+    min-width: 320px;
+    max-width: 600px;
+    width: 100%;
+}
+.popup h2 { /* заголовок 2 */
+    margin: 0;
+    color: #008000;
+    padding: 5px 0px 10px;
+    text-align: left;
+    text-shadow: 1px 1px 3px #adadad;
+    font-weight: 500;
+    font-size: 1.4em;
+    font-family: 'Tahoma', Arial, sans-serif;
+    line-height: 1.3;
+}
+/* параграфы */
+.popup p {margin: 0; padding: 5px 0}
+
+
+
+
+
+
+
+
+
+.main-content {
+  flex: 2;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  padding: 20px;
+  overflow:hidden;
+}
+
+.main-content img {
+ -moz-transition: all 1s ease-out;
+ -o-transition: all 1s ease-out;
+ -webkit-transition: all 1s ease-out;
+ }
+
+.main-content img:hover{
+ -webkit-transform: scale(1.1);
+ -moz-transform: scale(1.1);
+ -o-transform: scale(1.1);
+ }
+
+
+.flex{
+  margin: 10px 0 10px 450px;
+  color: #73cdff;
+  font-size:30px;
+}
+
+.footer{
+  flex: 3;
+  justify-content:center;
+}
+
+.contacts {
+    width: 100%;
+}
+
+.contacts_items {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    padding: 25px 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contacts_item {
+    position: relative;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.contacts_item-link {
+    font-size: 20px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.contacts_item-link::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 18px;
+    height: 24px;
+}
+
+
+
+
+
+.menu {
+    text-align: left;
+}
+
+.menu__icon {
+   display: none;
+   width: 45px;
+   height: 35px;
+   position: relative;
+   cursor: pointer;
+}
+
+.menu__icon span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: #333333;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.menu__icon span:nth-child(1) {
+  top: 0px;
+}
+
+.menu__icon span:nth-child(2), .menu__icon span:nth-child(3) {
+  top: 13px;
+}
+
+.menu__icon span:nth-child(4) {
+  top: 26px;
+ }
+
+.menu__links{
+  display: none;
+}
+
+.menu__links-item {
+    display: inline-block;
+    color: #333333;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu__links-item:hover {
+    text-decoration: underline;
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.menu.menu_state_open .menu__icon span:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.menu.menu_state_open  .menu__icon span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.menu.menu_state_open  .menu__icon span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.menu.menu_state_open .menu__links {
+  display: block;
+}
+
+
+@media only screen and (max-width : 1180px) {
+  .header_nav{
+   margin: 0 0 0 0;
+  }
+
+  .menu__icon{
+    display: inline-block;
+  }
+
+  .menu__links {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 52px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  .menu__links-item {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+  .flex{
+      text-align: center;
+      margin-left: -50px;
+  }
+
+
+
+}
+}
+
+
+
+@media only screen and (max-width : 1010px) {
+  .header_nav{
+   margin: 10px 0 0 0px;
+  }
+
+  .menu__icon{
+    display: inline-block;
+  }
+
+  .menu__links {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 52px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  .menu__links-item {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+  .flex{
+      text-align: center;
+      margin-left: -50px;
+  }
+
+
+
+}
+
+
+@media only screen and (max-width : 999px) {
+  .header_nav{
+    display: none;
+  }
+
+  .menu__icon{
+    display: inline-block;
+  }
+
+  .menu__links {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 52px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  .menu__links-item {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+  .flex{
+      text-align: center;
+      margin-left: -50px;
+  }
+
+
+
+}
+}
+
+
+@media only screen and (min-width : 540px) {
+    body{
+      width: 100%;
+    }
+
+
+  .header_nav{
+    display: none;
+  }
+
+  .menu__icon{
+    display: inline-block;
+  }
+
+  .menu__links {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 52px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  .menu__links-item {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+  }
+
+
+.main-content{
+  margin-left: -10px;
+}
+
+  .flex{
+      text-align: center;
+      margin-left: 10px;
+      flex-wrap: wrap;
+  }
+
+
+
+}
+}
+}
